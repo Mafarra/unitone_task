@@ -88,11 +88,11 @@ class _DailyWeatherWidgetState extends State<DailyWeatherWidget> {
                                 ),
                               ],
                             ),
-                            Icon(
-                              weather.weatherIcon,
-                              size: 48.0,
-                              color: Colors.blue,
-                            ),
+                            // Icon(
+                            //   weather.weatherIcon,
+                            //   size: 48.0,
+                            //   color: Colors.blue,
+                            // ),
                           ],
                         ),
                         const SizedBox(height: 8.0),
