@@ -7,7 +7,6 @@ import '../widgets/fadeIn.dart';
 import '../widgets/locationError.dart';
 import '../widgets/mainWeather.dart';
 import '../widgets/requestError.dart';
-import '../widgets/searchBar.dart';
 import '../widgets/weatherDetail.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -59,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (weatherProv.isLocationError) return LocationError();
             return Column(
               children: [
-                SearchBar(),
+               const SearchBar(),
                 Center(
                   child: SmoothPageIndicator(
                     controller: _pageController,
