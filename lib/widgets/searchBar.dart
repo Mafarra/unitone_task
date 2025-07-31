@@ -1,10 +1,14 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/weatherProvider.dart';
 
 class SearchBar extends StatefulWidget {
+  const SearchBar({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SearchBarState createState() => _SearchBarState();
 }
 
@@ -29,7 +33,7 @@ class _SearchBarState extends State<SearchBar> {
           color: Colors.white,
           child: TextField(
             enabled: !weatherProv.isLoading,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
             maxLines: 1,
             controller: _textController,
             decoration: InputDecoration(
@@ -43,15 +47,15 @@ class _SearchBarState extends State<SearchBar> {
                           _textController.clear();
                         });
                       },
-                      child: Icon(Icons.close, color: Colors.blue),
+                      child: const Icon(Icons.close, color: Colors.blue),
                     ),
-              hintStyle: TextStyle(color: Colors.grey),
+              hintStyle: const TextStyle(color: Colors.grey),
               errorText: _validate ? null : null,
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
-              icon: Padding(
-                padding: const EdgeInsets.only(left: 10),
+              icon: const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Icon(
                   Icons.search,
                   color: Colors.blue,
