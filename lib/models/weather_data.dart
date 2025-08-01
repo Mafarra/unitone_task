@@ -1,6 +1,4 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 // import 'package:flutter_weather_icons/flutter_weather_icons.dart';
 
 class WeatherData {

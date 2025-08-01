@@ -5,6 +5,8 @@ import '../helper/utils.dart';
 import '../provider/weatherProvider.dart';
 
 class WeatherInfo extends StatelessWidget {
+  const WeatherInfo({super.key});
+
   Widget _weatherInfoBuilder({
     required String header,
     required String body,

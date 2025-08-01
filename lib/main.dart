@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
         ),
-        home: HomeScreen(),
+        home: const HomeScreen(),
         routes: {
-          WeeklyScreen.routeName: (myCtx) => WeeklyScreen(),
+          WeeklyScreen.routeName: (myCtx) => const WeeklyScreen(),
           // HourlyScreen.routeName: (myCtx) => HourlyScreen(),
         },
       ),

@@ -75,7 +75,7 @@ class MapString {
     }
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 15,
       ),
     );

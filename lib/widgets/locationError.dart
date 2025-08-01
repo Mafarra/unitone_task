@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../provider/weatherProvider.dart';
 
 class LocationError extends StatefulWidget {
+  const LocationError({super.key});
+
   @override
   _LocationErrorState createState() => _LocationErrorState();
 }
@@ -15,13 +17,13 @@ class _LocationErrorState extends State<LocationError> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.location_off,
             color: Colors.black,
             size: 75,
           ),
-          SizedBox(height: 10),
-          Text(
+          const SizedBox(height: 10),
+          const Text(
             'Your Location is Disabled',
             style: TextStyle(
               color: Colors.black,
@@ -29,8 +31,8 @@ class _LocationErrorState extends State<LocationError> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 75, vertical: 10),
             child: Text(
               "Please turn on your location service and refresh the app",
               textAlign: TextAlign.center,
@@ -44,10 +46,10 @@ class _LocationErrorState extends State<LocationError> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Theme.of(context).primaryColor,
-              textStyle: TextStyle(color: Colors.white),
-              padding: EdgeInsets.symmetric(horizontal: 50),
+              textStyle: const TextStyle(color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 50),
             ),
-            child: Text('Enable Location'),
+            child: const Text('Enable Location'),
             onPressed: () async {
               await Provider.of<WeatherProvider>(context, listen: false)
                   .getWeatherData(context);

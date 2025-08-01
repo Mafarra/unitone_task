@@ -4,6 +4,9 @@ import 'package:http/http.dart' as http;
 import 'package:unitone_task/models/weather_data.dart';
 
 class DailyWeatherWidget extends StatefulWidget {
+  const DailyWeatherWidget({super.key});
+
+  @override
   _DailyWeatherWidgetState createState() => _DailyWeatherWidgetState();
 }
 

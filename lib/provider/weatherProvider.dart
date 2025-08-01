@@ -97,7 +97,7 @@ class WeatherProvider with ChangeNotifier {
       weather = Weather.fromJson(extractedData);
     } catch (error) {
       isLoading = false;
-      this.isRequestError = true;
+      isRequestError = true;
     } finally {
       isLoading = false;
       notifyListeners();
@@ -139,7 +139,7 @@ class WeatherProvider with ChangeNotifier {
           .toList();
     } catch (error) {
       print(error);
-      this.isRequestError = true;
+      isRequestError = true;
     } finally {
       isLoading = false;
       notifyListeners();
@@ -156,7 +156,7 @@ class WeatherProvider with ChangeNotifier {
       weather = Weather.fromJson(extractedData);
     } catch (error) {
       print(error);
-      this.isRequestError = true;
+      isRequestError = true;
     } finally {
       isLoading = false;
       notifyListeners();
@@ -178,7 +178,7 @@ class WeatherProvider with ChangeNotifier {
   }
 
   Future<List<WeatherData>> _fetchWeatherData() async {
-    final apiUrl =
+    const apiUrl =
         'https://api.weatherapi.com/v1/forecast.json?key=d14d9458d2b2417c8b4122331230407&q=Gaza&days=7';
     final response = await http.get(Uri.parse(apiUrl));
     print(response);

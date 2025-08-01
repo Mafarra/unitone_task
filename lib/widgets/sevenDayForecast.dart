@@ -7,6 +7,8 @@ import '../models/dailyWeather.dart';
 import '../provider/weatherProvider.dart';
 
 class SevenDayForecast extends StatelessWidget {
+  const SevenDayForecast({super.key});
+
   Widget dailyWidget(DailyWeather weather) {
     final dayOfWeek = DateFormat('EEE').format(weather.date!);
     return Container(
@@ -16,7 +18,7 @@ class SevenDayForecast extends StatelessWidget {
           FittedBox(
             child: Text(
               dayOfWeek,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
               ),
@@ -37,8 +39,8 @@ class SevenDayForecast extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 15.0, left: 20.0),
+        const Padding(
+          padding: EdgeInsets.only(top: 15.0, left: 20.0),
           child: Text(
             'Next 7 Days',
             style: TextStyle(
@@ -67,27 +69,27 @@ class SevenDayForecast extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Today',
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 Text(
                                   '${weatherProv.weather!.temp.toStringAsFixed(1)}°',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
                                 MapString.mapInputToWeather(
                                   context,
-                                  '${weatherProv.weather!.currently}',
+                                  weatherProv.weather!.currently,
                                 )
                               ],
                             ),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 20),
                               child: MapString.mapStringToIcon(
-                                '${weatherProv.weather!.currently}',
+                                weatherProv.weather!.currently,
                                 45,
                               ),
                             ),
@@ -96,11 +98,11 @@ class SevenDayForecast extends StatelessWidget {
                       );
                     },
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   SizedBox(
                     height: 100.0,
                     child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       scrollDirection: Axis.horizontal,
                       itemCount: weatherProv.sevenDayWeather.length,

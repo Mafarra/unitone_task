@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   bool _isLoading = false;
 
   @override
@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Consumer<WeatherProvider>(
           builder: (context, weatherProv, _) {
-            if (weatherProv.isRequestError) return RequestError();
-            if (weatherProv.isLocationError) return LocationError();
+            if (weatherProv.isRequestError) return const RequestError();
+            if (weatherProv.isLocationError) return const LocationError();
             return Column(
               children: [
                const SearchBar(),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Expanded(
                         child: PageView(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           controller: _pageController,
                           children: [
                             // First Page of the Page View
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   FadeIn(
                                     curve: Curves.easeIn,
-                                    duration: Duration(milliseconds: 250),
+                                    duration: const Duration(milliseconds: 250),
                                     child: MainWeather(),
                                   ),
                                   // FadeIn(
@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   //   duration: Duration(milliseconds: 500),
                                   //   child: WeatherInfo(),
                                   // ),
-                                  DailyWeatherWidget(),
+                                  const DailyWeatherWidget(),
                                   // FadeIn(
                                   //   curve: Curves.easeIn,
                                   //   duration: Duration(milliseconds: 750),
@@ -113,13 +113,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             // Second Page of the Page View
                             ListView(
                               padding: const EdgeInsets.all(10),
-                              children: [
+                              children: const [
                                 // FadeIn(
                                 //   curve: Curves.easeIn,
                                 //   duration: Duration(milliseconds: 250),
                                 //   child: SevenDayForecast(),
                                 // ),
-                                const SizedBox(height: 16.0),
+                                SizedBox(height: 16.0),
                                 FadeIn(
                                   curve: Curves.easeIn,
                                   duration: Duration(milliseconds: 500),

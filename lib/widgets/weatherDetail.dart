@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../provider/weatherProvider.dart';
 
 class WeatherDetail extends StatelessWidget {
+  const WeatherDetail({super.key});
+
   Widget _gridWeatherBuilder(String header, String body, IconData icon) {
     return Material(
       elevation: 5,
@@ -28,7 +30,7 @@ class WeatherDetail extends StatelessWidget {
                 FittedBox(
                   child: Text(
                     header,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
@@ -37,7 +39,7 @@ class WeatherDetail extends StatelessWidget {
                 FittedBox(
                   child: Text(
                     body,
-                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
+                    style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
                   ),
                 ),
               ],
@@ -54,8 +56,8 @@ class WeatherDetail extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               'Today Details',
               style: TextStyle(
@@ -64,12 +66,12 @@ class WeatherDetail extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height / 3,
             width: MediaQuery.of(context).size.width,
             child: GridView(
-              padding: EdgeInsets.all(15),
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              padding: const EdgeInsets.all(15),
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 250,
                 childAspectRatio: 2 / 1,
                 crossAxisSpacing: 10,

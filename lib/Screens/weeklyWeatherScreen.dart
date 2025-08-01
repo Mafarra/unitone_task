@@ -8,13 +8,15 @@ import '../provider/weatherProvider.dart';
 class WeeklyScreen extends StatelessWidget {
   static const routeName = '/weeklyScreen';
 
+  const WeeklyScreen({super.key});
+
   Widget dailyWidget(dynamic weather, BuildContext context) {
     final dayOfWeek = DateFormat('EEEEE').format(weather.date);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-      padding: EdgeInsets.symmetric(horizontal: 15),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      decoration: const BoxDecoration(
         color: Colors.white,
       ),
       child: Column(
@@ -23,16 +25,16 @@ class WeeklyScreen extends StatelessWidget {
             children: [
               Text(
                 dayOfWeek,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 '${weather.dailyTemp.toStringAsFixed(1)}°',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -43,7 +45,7 @@ class WeeklyScreen extends StatelessWidget {
               ),
             ],
           ),
-          Divider(color: Colors.black),
+          const Divider(color: Colors.black),
         ],
       ),
     );
@@ -59,12 +61,12 @@ class WeeklyScreen extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          title: Text(
+          title: const Text(
             'Next 7 Days',
             style: TextStyle(color: Colors.black),
           ),
         ),
-        body: Container(
+        body: SizedBox(
           height: mediaQuery.size.height,
           width: mediaQuery.size.width,
           child: Column(
